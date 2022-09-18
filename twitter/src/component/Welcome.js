@@ -105,7 +105,7 @@ class Welcome extends Component{
     render(){
         return(
             <div>
-                <h2>Assignment 2: Twitter Integration </h2>
+                <h2>Twitter Maverick Assignment </h2>
                 <ToastContainer />
                 <div style = {{ marginLeft: '30%', marginTop: '5%', marginBottom: '2%'}}>
                     <input class="form-control" type="text" placeholder="Enter Text to Search/Tweet" aria-label="Search"
