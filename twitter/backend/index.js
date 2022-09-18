@@ -1,7 +1,8 @@
 var express = require('express');
 var path = require('path');
 var cors = require('cors');
-
+const postTweetRouter = require("./routes/postTweets");
+const deleteTweetRouter = require("./routes/deleteTweets");
 
 var index = require('./routes/Routes');
 
@@ -12,6 +13,9 @@ var corsOptions = {
   credentials: true,
   optionsSuccessStatus: 200
 }
+
+app.use("/postTweet", postTweetRouter);
+app.use("/delete", deleteTweetRouter);
 
 app.use(cors(corsOptions))
 app.use('/', index);
