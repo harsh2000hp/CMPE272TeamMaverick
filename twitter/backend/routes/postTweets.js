@@ -13,9 +13,9 @@ const authClient = new auth.OAuth2User({
   scopes: ["users.read", "tweet.read", "tweet.write"],
 });
 const client = new Client(authClient);
-
 const STATE = "my-state";
 
+//post tweet - Added by PhaniSaiRam
 router.get("/", async (req, res) => {
   const authUrl = authClient.generateAuthURL({
     state: STATE,

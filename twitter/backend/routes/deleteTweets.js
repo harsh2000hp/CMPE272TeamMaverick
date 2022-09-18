@@ -5,9 +5,6 @@ dotenv.config();
 
 const app = express();
 
-// const URL = process.env.URL || "localhost";
-// const PORT = process.env.PORT || 5000;
-
 const authClient = new auth.OAuth2User({
   client_id: process.env.CLIENT_ID,
   client_secret: process.env.CLIENT_SECRET,
@@ -15,10 +12,10 @@ const authClient = new auth.OAuth2User({
   scopes: ["users.read", "tweet.read", "tweet.write"],
 });
 const client = new Client(authClient);
-
 const STATE = "my-state";
-
 const router = require("express").Router();
+
+//post tweet - Added by Piyush
 router.get("/", async (req, res) => {
   const authUrl = authClient.generateAuthURL({
     state: STATE,
