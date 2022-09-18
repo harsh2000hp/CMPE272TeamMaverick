@@ -6,13 +6,10 @@ dotenv.config();
 const app = express();
 const router = require("express").Router();
 
-const URL = process.env.URL || "localhost";
-const PORT = process.env.PORT || 5000;
-
 const authClient = new auth.OAuth2User({
   client_id: process.env.CLIENT_ID,
   client_secret: process.env.CLIENT_SECRET,
-  callback: `${URL}:${PORT}/callback`,
+  callback: `${process.env.URL}:${process.env.PORT}/callback`,
   scopes: ["users.read", "tweet.read", "tweet.write"],
 });
 const client = new Client(authClient);
@@ -20,7 +17,6 @@ const client = new Client(authClient);
 const STATE = "my-state";
 
 router.get("/", async (req, res) => {
-
   const authUrl = authClient.generateAuthURL({
     state: STATE,
     code_challenge_method: "s256",
@@ -51,7 +47,9 @@ router.get("/", async (req, res) => {
   app.get("/tweets", async function (req, res) {
     try {
       const response = await client.tweets.createTweet({
-        "text": "good morning twitter tommrow is sat.. " + Math.floor(Math.random()*100)
+        text:
+          "good morning twitter tommrow is sat.. " +
+          Math.floor(Math.random() * 100),
       });
 
       console.log("response", JSON.stringify(response, null, 2));
@@ -59,10 +57,7 @@ router.get("/", async (req, res) => {
     } catch (error) {
       console.log("tweets error", error);
     }
-  }); 
+  });
 });
 
-app.listen(PORT, () => {
-  console.log(`Go here to login: ${URL}:${PORT}`);
-});
 module.exports = router;
