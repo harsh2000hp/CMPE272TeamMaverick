@@ -3,7 +3,6 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-//Added by BHarat
 class Welcome extends Component {
   state = {
     queries: "",
@@ -19,6 +18,7 @@ class Welcome extends Component {
   tweetify = () => toast("Tweeted!");
   deleteify = () => toast("Deleted!");
 
+  //Added by HarshPatel
   handleTweet = (text) => {
     const req_header = {
       headers: {
@@ -28,7 +28,7 @@ class Welcome extends Component {
         text: text,
       },
     };
-    axios.get("http://localhost:5000/tweet", req_header).then((res) => {
+    axios.get("http://localhost:5000/post", req_header).then((res) => {
       console.log(res);
       {
         this.tweetify();
@@ -36,6 +36,7 @@ class Welcome extends Component {
     });
   };
 
+  //Added by Piyush
   handleDelete = (id) => {
     const req_header = {
       headers: {
@@ -54,6 +55,7 @@ class Welcome extends Component {
     });
   };
 
+  //Added by PriyaGupta
   handleSearch = (query) => {
     const req_header = {
       headers: {
@@ -72,6 +74,7 @@ class Welcome extends Component {
     });
   };
 
+  //Added by PhaniSaiRam
   renderTweets() {
     return this.state.tweets.map((tweet) => {
       console.log(tweet.text);

@@ -1,5 +1,5 @@
 {
-  "name": "Twitter",
+  "name": "maverick-twitter",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
