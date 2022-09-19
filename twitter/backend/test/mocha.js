@@ -4,7 +4,7 @@
 var expect = require("chai").expect;
 var request = require("request");
 
-//Added by PriyaGupta
+//Added by Priya Gupta
 it("Successfully tested to Search API", function () {
   request("http://localhost:5000/search", function (error, response, body) {
     //console.log(response.statusCode);
@@ -24,7 +24,7 @@ it("Successfully tested to Tweet API", function () {
   });
 });
 
-//Created by HarshPatel
+//Created by Harsh Patel
 it("Successfully tested to Delete Tweet API", function () {
   request("http://localhost:5000/delete", function (error, response, body) {
     //console.log(response.statusCode);
