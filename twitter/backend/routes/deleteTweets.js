@@ -15,7 +15,7 @@ const client = new Client(authClient);
 const STATE = "my-state";
 const router = require("express").Router();
 
-//post tweet - Added by Piyush
+//delete tweet - Added by Piyush
 router.get("/", async (req, res) => {
   const authUrl = authClient.generateAuthURL({
     state: STATE,
