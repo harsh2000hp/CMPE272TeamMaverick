@@ -14,7 +14,7 @@ const authClient = new auth.OAuth2User({
 const client = new Client(authClient);
 const STATE = "my-state";
 
-//Retrieve Tweets - Added by PriyaGupta
+//Retrieve Tweets - Added by Priya Gupta
 router.get("/search", async (req, r) => {
   const client = new Client(process.env.BEARER_TOKEN);
   const res = await twitterClient.v2.userByUsername("maveric1303");
