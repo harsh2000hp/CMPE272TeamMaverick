@@ -1,5 +1,5 @@
 /* 
- This file has get functionality to fetch all the tweet of a user from twitter account
+ This file has get and search functionality to fetch all the tweet of a user from twitter account
  First we need to pass the username in our case it's maveric1303 to get all tweets.
  @param username
  output list of tweets
