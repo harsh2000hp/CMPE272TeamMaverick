@@ -1,3 +1,9 @@
+/* 
+ This file has delete functionality to remove the tweet from twitter account
+ Callback method is added to authorize a user with its twitter account
+ @param tweetID
+ output boolean true if tweet deleted otherwise return false if tweet does not delete.
+*/
 const express = require("express");
 const { Client, auth } = require("twitter-api-sdk");
 const dotenv = require("dotenv");
