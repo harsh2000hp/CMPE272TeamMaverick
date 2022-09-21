@@ -1,3 +1,8 @@
+/* 
+ This file has get functionality to post a tweet and show on UI as well as twitter account
+ @param text
+ output posted tweets
+*/
 const express = require("express");
 const { Client, auth } = require("twitter-api-sdk");
 const dotenv = require("dotenv");
